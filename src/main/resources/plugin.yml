@@ -1,0 +1,11 @@
+name: LanDiscord
+version: '${version}'
+main: kr.kro.lanthanide.landiscord.LanDiscord
+api-version: 1.19
+prefix: LanDiscord
+authors: [ lanthanide ]
+description: Cool Discord-Server linker plugin
+commands:
+  discord:
+    description: LanDiscord 의 기본적인 명령어입니다.
+    permission: landiscord.discord
