@@ -1,7 +1,5 @@
 discord:
   # 사용할 봇의 토큰
   token:
-  # 서버 id
-  server:
   # 채널 id
   channel:

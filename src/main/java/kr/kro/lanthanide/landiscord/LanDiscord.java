@@ -2,7 +2,6 @@ package kr.kro.lanthanide.landiscord;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -10,7 +9,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public final class LanDiscord extends JavaPlugin {
     private static JDA bot = null;
-    private static Guild guild;
     private static TextChannel channel;
 
     @Override
@@ -37,14 +35,13 @@ public final class LanDiscord extends JavaPlugin {
                         getLogger().info("봇을 시작했습니다.");
 
                         // 채널, 길드 설정
-                        if (getConfig().getString("discord.server") == null || getConfig().getString("discord.channel") == null) {
-                            getLogger().severe("디스코드 서버와 채널의 id 가 설정되지 않았습니다.");
+                        if (getConfig().getString("discord.channel") == null) {
+                            getLogger().severe("디스코드 채널의 id 가 설정되지 않았습니다.");
                         } else {
-                            // discord.server 와 discord.channel 존재
-                            guild = bot.getGuildById(getConfig().getLong("discord.server"));
+                            // discord.channel 존재
                             channel = bot.getTextChannelById(getConfig().getLong("discord.channel"));
 
-                            getLogger().info("서버 " + guild.getName() + " 의 " + channel.getName() + " 채널을 감지했습니다.");
+                            getLogger().info(channel.getName() + " 채널을 감지했습니다.");
                         }
 
                         // 서버 ON 메시지
@@ -83,10 +80,6 @@ public final class LanDiscord extends JavaPlugin {
     public static JDA getBot() {
         return bot;
     }
-
-//    public static Guild getGuild() {
-//        return guild;
-//    }
 
     public static TextChannel getChannel() {
         return channel;

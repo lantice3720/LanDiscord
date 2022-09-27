@@ -23,7 +23,6 @@ repositories {
 
 dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT'
-//    implementation files("D:/Documents/programming/libs/JDA-4.4.0_350-withDependencies.jar")
 //    compileOnly 'org.spigotmc:spigot:1.19.2-R0.1-SNAPSHOT'
     implementation 'net.dv8tion:JDA:5.0.0-alpha.20'
 
@@ -60,8 +59,7 @@ jar {
 
 shadowJar {
     dependencies {
-//        include(dependency('net.dv8tion:JDA:5.0.0-alpha.20'))
         exclude(dependency('io.papermc.paper:paper-api:1.19-R0.1-SNAPSHOT'))
     }
-//    minimize()
+    minimize()
 }
