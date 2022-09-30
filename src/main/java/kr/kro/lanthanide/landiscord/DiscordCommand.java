@@ -12,7 +12,7 @@ public class DiscordCommand implements CommandExecutor {
             case 1:
                 if (args[0].equals("shutdown")) {
                     sender.sendMessage("봇을 강제로 종료합니다.");
-                    LanDiscord.getBot().shutdown();
+                    LanDiscord.shutdownBot();
                 }
             default:
                 return false;
