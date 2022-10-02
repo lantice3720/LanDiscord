@@ -1,5 +1,6 @@
-package kr.kro.lanthanide.landiscord;
+package kr.kro.lanthanide.landiscord.command;
 
+import kr.kro.lanthanide.landiscord.util.DiscordUtil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,7 +13,7 @@ public class DiscordCommand implements CommandExecutor {
             case 1:
                 if (args[0].equals("shutdown")) {
                     sender.sendMessage("봇을 강제로 종료합니다.");
-                    LanDiscord.shutdownBot();
+                    DiscordUtil.shutdownBot();
                 }
             default:
                 return false;
